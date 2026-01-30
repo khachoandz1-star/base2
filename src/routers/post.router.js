@@ -1,7 +1,7 @@
-import {Router} from "express";
+import { Router } from "express";
 import { getAll,getOne,createOne,deleteOne,updateOne } from "../controllers/post.controller";
 
-const postRouter=Router();
+const postRouter = Router();
 
 postRouter.get("/",getAll);
 postRouter.get("/:id",getOne);
