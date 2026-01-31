@@ -12,7 +12,7 @@ export const signup = async (req, res) => {
         const userExist = await User.findOne({ email });
         if (userExist) {
             return res.status(400).json({
-                messsage: "Email đã tồn tại"
+                message: "Email đã tồn tại"
             });
         }
 
