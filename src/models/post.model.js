@@ -1,5 +1,6 @@
-import mongoose, { now } from "mongoose";
-const postSchema = new mongoose.Schema({
+import mongoose from "mongoose";
+
+const postSchema= new mongoose.Schema({
     title:{
         type:String,
         required:true,
@@ -12,13 +13,11 @@ const postSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
-     createdAt:{
+      createdAt:{
         type:Date,
         default:Date.now
     }
-},{
-   versionKey:false
-})
+},{versionKey:false});
 
 const Post = mongoose.model("Post",postSchema);
 export default Post;
