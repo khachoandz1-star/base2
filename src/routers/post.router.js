@@ -1,16 +1,12 @@
 import { Router } from "express";
-import { getAll,getOne,createOne,updateOne,deleteOne } from "../controllers/post.controller";
-
-
-import { validateRequest } from "../middlewares/validateRequest";
-import schema from "../validations/post.validation";
+import { getAll,getOne,createOne,deleteOne,updateOne } from "../controllers/post.controller";
 
 const postRouter=Router();
 
 postRouter.get("/",getAll);
 postRouter.get("/:id",getOne);
-postRouter.post("/",validateRequest(schema),createOne);
-postRouter.put("/:id",validateRequest(schema),updateOne);
+postRouter.post("/",createOne);
 postRouter.delete("/:id",deleteOne);
+postRouter.put("/:id",updateOne);
 
 export default postRouter;
